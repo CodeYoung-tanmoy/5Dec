@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Calcuator</title>
+    <style>
+        body{
+            margin-top: 0px;
+        }
+        div{
+            margin-left: 120px;
+            margin-right: 120px;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding-top: 50px;
+            padding-bottom: 50px;
+            padding-left: 300px;
+            padding-right: 300px;
+        }
+        body {
+            background-image: url("https://eskipaper.com/images/hd-wallpapers-for-pc-2.jpg");
+            background-size: cover;
+        }
+
+        #a {
+            height: 140px;
+            width: 140px;
+            border-radius: 50%;
+            font-size: 45px;
+            font-family: calibri;
+            font-weight: bold;
+            background-color: teal;
+            color: yellow;
+            border: 2px solid black;
+            cursor: pointer;
+            transition: 0.3s ease-in;
+        }
+        #a:hover{
+            background-color: rgb(2, 78, 78);
+            color: yellow;
+            box-shadow: 2px 2px 2px black;
+            border: 2px solid gold;
+        }
+        #b {
+            height: 140px;
+            width: 140px;
+            border-radius: 50%;
+            font-size: 45px;
+            font-family: calibri;
+            font-weight: bold;
+            background-color: indigo;
+            color: cornsilk;
+            border: 2px solid black;
+            cursor: pointer;
+            transition: 0.3s ease-in;
+        }
+        #b:hover{
+            background-color: rgb(43, 2, 73);
+            color: cornsilk;
+            box-shadow: 2px 2px 2px black;
+            border: 2px solid gold;
+        }
+
+        #c {
+            height: 140px;
+            width: 140px;
+            border-radius: 50%;
+            font-size: 55px;
+            font-family: calibri;
+            font-weight: bold;
+            background-color: rgb(20, 17, 17);
+            color: red;
+            border: 2px solid black;
+            cursor: pointer;
+            transition: 0.3s ease-in;
+        }
+        #c:hover{
+            background-color: black;
+            color: red;
+            box-shadow: 2px 2px 2px black;
+            border: 2px solid gold;
+        }
+
+        #d {
+            height: 140px;
+            width: 140px;
+            border-radius: 50%;
+            font-size: 55px;
+            font-family: calibri;
+            font-weight: bold;
+            background-color: red;
+            color: white;
+            border: 2px solid black;
+            cursor: pointer;
+            transition: 0.3s ease-in;
+        }
+        #d:hover{
+            background-color: rgb(129, 9, 9);
+            color: white;
+            box-shadow: 2px 2px 2px black;
+            border: 2px solid gold;
+        }
+
+        #inp {
+            height: 90px;
+            width: 575px;
+            text-align: right;
+            font-size: 60px;
+            font-family: calibri;
+            font-weight: 600;
+            background-color: rgb(4, 4, 71);
+            color: gold;
+            border: 2px solid black;
+            border-radius: 15px;
+            transition: 0.3s ease-in;
+        }
+        #inp:hover{
+            border: 2px solid gold;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <input type="text" id="inp" placeholder="0">
+        <table>
+            <tr>
+                <td>
+                    <input type="button" value="7" id="a" onclick="printValue(7)">
+                </td>
+                <td>
+                    <input type="button" value="8" id="a" onclick="printValue(8)">
+                </td>
+                <td>
+                    <input type="button" value="9" id="a" onclick="printValue(9)">
+                </td>
+                <td>
+                    <input type="button" value="÷" id="b" onclick="printValue('/')">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" value="4" id="a" onclick="printValue(4)">
+                </td>
+                <td>
+                    <input type="button" value="5" id="a" onclick="printValue(5)">
+                </td>
+                <td>
+                    <input type="button" value="6" id="a" onclick="printValue(6)">
+                </td>
+                <td>
+                    <input type="button" value="x" id="b" onclick="printValue('*')">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" value="1" id="a" onclick="printValue(1)">
+                </td>
+                <td>
+                    <input type="button" value="2" id="a" onclick="printValue(2)">
+                </td>
+                <td>
+                    <input type="button" value="3" id="a" onclick="printValue(3)">
+                </td>
+                <td>
+                    <input type="button" value="-" id="b" onclick="printValue('-')">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" value="C" id="c" onclick="deleteValue()">
+                </td>
+                <td>
+                    <input type="button" value="0" id="a" onclick="printValue(0)">
+                </td>
+                <td>
+                    <input type="button" value="=" id="d" onclick="finalValue()">
+                </td>
+                <td>
+                    <input type="button" value="+" id="b" onclick="printValue('+')">
+                </td>
+            </tr>
+
+        </table>
+    </div>
+    <script>
+        function printValue(num) {
+            document.getElementById("inp").value = document.getElementById("inp").value + num
+        }
+        function deleteValue() {
+            document.getElementById("inp").value = ""
+        }
+        function finalValue() {
+            var exp = document.getElementById("inp").value
+            var answer = eval(exp)
+            document.getElementById("inp").value = answer
+        }
+    </script>
+</body>
+
+</html>
